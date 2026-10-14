@@ -29,3 +29,7 @@ desktop.ini
 # Temporary files
 *.tmp
 *.log
+
+# Temporary raster test images
+/dda_output.bmp
+/raster_canvas_test.bmp
