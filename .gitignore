@@ -1,0 +1,31 @@
+
+# Compiled executables and object files
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.a
+*.lib
+
+# Build output
+build/
+cmake-build-*/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Debugging files
+*.pdb
+*.ilk
+*.dSYM/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.log
