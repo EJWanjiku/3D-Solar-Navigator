@@ -36,3 +36,11 @@ add_executable(bresenham_line_drawing
 target_include_directories(bresenham_line_drawing PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
+
+add_executable(polygon_representation_and_operations
+    src/polygon_representation_and_operations.cpp
+)
+
+target_include_directories(polygon_representation_and_operations PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
