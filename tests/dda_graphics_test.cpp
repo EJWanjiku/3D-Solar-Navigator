@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <algorithm>
-#include "raster_canvas.h"
+#include "raster/raster_canvas.h"
 
 struct Point {
     int x;

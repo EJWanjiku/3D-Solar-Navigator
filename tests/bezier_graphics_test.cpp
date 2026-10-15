@@ -2,7 +2,7 @@
 #include <vector>
 #include <utility>
 #include <cmath>
-#include "raster_canvas.h"
+#include "raster/raster_canvas.h"
  
 using Point = std::pair<double, double>;
  

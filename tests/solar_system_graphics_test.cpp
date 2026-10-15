@@ -2,9 +2,9 @@
 #include <cmath>
 #include <vector>
 
-#include "raster_canvas.h"
-#include "midpoint_circle.h"
-#include "midpoint_ellipse.h"
+#include "raster/raster_canvas.h"
+#include "algorithms/shapes/midpoint_circle.h"
+#include "algorithms/shapes/midpoint_ellipse.h"
 
 const double PI = 3.14159265358979323846;
 

@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "raster_canvas.h"
+#include "raster/raster_canvas.h"
 
 int main() {
     // Create a white canvas measuring 400 by 300 pixels.
