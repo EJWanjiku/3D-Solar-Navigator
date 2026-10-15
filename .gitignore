@@ -33,6 +33,3 @@ desktop.ini
 # Temporary raster test images
 /dda_output.bmp
 /raster_canvas_test.bmp
-
-# Generated graphics
-*.bmp
