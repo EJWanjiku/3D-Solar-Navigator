@@ -1,8 +1,8 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <utility>
 #include <cmath>
-#include "raster_canvas.h"
+#include "raster/raster_canvas.h"
  
 using Point = std::pair<double, double>;
  
@@ -87,7 +87,7 @@ int main() {
        }
    }
  
-   canvas.saveBMP("catmull_rom_output.bmp");
+   canvas.saveBMP("output/catmull_rom_output.bmp");
  
    std::cout << "Catmull-Rom spline test completed.\n";
    return 0;

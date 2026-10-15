@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <cmath>
 #include <cstdlib>
@@ -82,7 +82,7 @@ int main() {
         canvas.setPixel(centerX + p.x, centerY - p.y, 0, 150, 0);
     }
 
-    if (canvas.saveBMP("dda_output.bmp")) {
+    if (canvas.saveBMP("output/dda_output.bmp")) {
         std::cout << "DDA image saved: dda_output.bmp\n";
     } else {
         std::cerr << "Could not save DDA image.\n";
@@ -91,3 +91,4 @@ int main() {
 
     return 0;
 }
+

@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <utility>
 #include <cmath>
@@ -61,7 +61,7 @@ int main() {
        previous = current;
    }
  
-   canvas.saveBMP("bezier_output.bmp");
+   canvas.saveBMP("output/bezier_output.bmp");
  
    std::cout << "Bezier curve test completed.\n";
    return 0;
