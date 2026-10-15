@@ -9,7 +9,7 @@
 const double PI = 3.14159265358979323846;
 
 // Draw an ellipse for an orbital path.
-// We will replace this with the Midpoint Ellipse algorithm next.
+// We will replace this with the Midpoint Ellipse algorithm.
 
 void drawEllipse(
     RasterCanvas& canvas,
