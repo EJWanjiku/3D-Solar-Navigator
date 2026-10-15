@@ -97,7 +97,36 @@ Generated graphics are organized in the `output/` directory. The images below sh
 
 ![Raster Canvas Test Output](output/raster_canvas_test.bmp)
 
-**Note:** These image links will display correctly only when the corresponding image files exist in `output/` and are committed to the GitHub repository. If an image has not been generated yet, add it when it becomes available.
+### 6.5 Bezier Curve
+
+![Bezier Curve Output](output/bezier_output.bmp)
+
+### 6.6 Bresenham Line Drawing
+
+![Bresenham Line Drawing Output](output/bresenham_output.bmp)
+
+### 6.7 Catmull-Rom Spline
+
+![Catmull-Rom Spline Output](output/catmull_rom_output.bmp)
+
+### 6.8 Circle Graphics Test
+
+![Circle Graphics Test Output](output/circle_graphics_test.bmp)
+
+### 6.9 Ellipse Graphics Test
+
+![Ellipse Graphics Test Output](output/ellipse_graphics_test.bmp)
+
+### 6.10 Polygon Clipping
+
+![Polygon Clipping Output](output/polygon_clipping_output.bmp)
+
+### 6.11 Polygon Filling
+
+![Polygon Filling Output](output/polygon_filling_output.bmp)
+
+
+**Note:** These image links will display correctly only when the corresponding image files exist in the `output/` directory and are committed to the GitHub repository. If an image has not been generated yet, add it when it becomes available.
 
 ## 7. Project Structure
 
