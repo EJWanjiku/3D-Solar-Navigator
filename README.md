@@ -2,282 +2,227 @@
 
 ## 1. Project Description
 
-Project Stellar is a C++ computer graphics project that aims to develop an interactive visualization of our Solar System. The application will represent the Sun and selected planets, illustrate their orbital paths and movements, and provide an interactive way to explore the Solar System.
+Project Stellar is a C++ computer graphics project that demonstrates fundamental computer graphics algorithms through a Solar System visualization. The project implements line drawing, polygon operations, clipping, filling, circle and ellipse drawing, and curve generation.
 
-The project focuses on applying fundamental computer graphics algorithms to draw, manipulate, and render geometric objects. These algorithms will form the foundation for developing a more complete Solar System visualization with planetary motion, camera navigation, scene design, and lighting.
-
-The project is being developed incrementally, beginning with the implementation and testing of the required graphics algorithms before integrating them into the larger application.
+The project currently uses a raster-based approach to generate graphics by calculating pixel coordinates and saving the results as bitmap images. The aim is to demonstrate how computer graphics algorithms work and how they can be applied to represent objects and orbital paths in a Solar System scene.
 
 ## 2. Group Members and Responsibilities
 
-| Name                       | Admission Number | Responsibility                                         |
-| -------------------------- | ---------------- | ------------------------------------------------------ |
-| Rabadiya Vinit Manishkumar | 149227           | Core rendering and orbit mathematics                   |
-| Wafula Mornylyne Mutilah   | 164534           | Core rendering and orbit mathematics support           |
-| Odhiambo Eugene Onyango    | 166333           | Camera and navigation controls                         |
-| Patel Radha Saileshkumar   | 149226           | Scene design, colors, sizes, and lighting              |
-| Tavasi Wyclef Wasike       | 166082           | Testing and integration                                |
-| Wanjiku Esther Jesicah     | 166232           | Documentation, repository management, and presentation |
+| Name | Registration Number | Responsibility |
+|---|---|---|
+| Rabadiya Vinit Manishkumar | 149227 | Core rendering and orbit mathematics |
+| Wafula Mornylyne Mutilah | 164534 | Core rendering and orbit mathematics support |
+| Odhiambo Eugene Onyango | 166333 | Camera and navigation controls |
+| Patel Radha Saileshkumar | 149226 | Scene design, colours, object sizes, and lighting |
+| Tavasi Wyclef Wasike | 166082 | Testing and integration |
+| Wanjiku Esther Jesicah | 166232 | Documentation, repository management, and presentation |
 
 ## 3. Technologies and Tools
 
-The project currently uses the following tools and technologies:
+- **C++17** — implementation of graphics algorithms.
+- **GCC/G++** — compilation of C++ source files.
+- **CMake** — project configuration and build management.
+- **Visual Studio Code** — source code editing and development.
+- **Git and GitHub** — version control and collaboration.
+- **PowerShell** — running build commands on Windows.
+- **RasterCanvas** — custom raster canvas for setting pixels, drawing lines, and saving BMP images.
 
-- **C++17:** Main programming language for graphics algorithms and application logic.
-- **GCC (MinGW-w64 UCRT64):** C++ compiler.
-- **CMake:** Build system for configuring and compiling the application.
-- **Visual Studio Code:** Code editor and development environment.
-- **GDB:** Debugging tool.
-- **Git:** Version control for tracking source code changes.
-- **GitHub:** Repository hosting and team collaboration.
+## 4. Graphics Techniques and Algorithms Implemented
 
-A graphics library may be introduced if needed and permitted by the course requirements. The core graphics algorithms will be implemented by the team.
+The project currently contains the following algorithms:
 
-## 4. Graphics Techniques and Algorithms
+### Line Drawing
+- Digital Differential Analyzer (DDA) line drawing.
+- Bresenham's line drawing algorithm.
 
-The project is required to implement the following computer graphics techniques:
+### Polygon Operations
+- Polygon representation and operations.
+- Sutherland–Hodgman polygon clipping.
+- Scan-line polygon filling.
 
-### 4.1 Line Drawing and Line Operations
+### Circle and Ellipse Drawing
+- Midpoint circle drawing algorithm.
+- Midpoint ellipse drawing algorithm.
 
-Implement line drawing algorithms and relevant line operations for generating and manipulating line segments.
+### Curves
+- Cubic Bézier curve generation.
+- Catmull–Rom spline generation.
 
-### 4.2 Polygon Representation and Operations
+### Solar System Visualization
+- Raster-based drawing of the Sun and planets.
+- Elliptical orbital paths.
+- Circle-based planetary representations.
+- Saturn's rings drawn using ellipses.
+- Sun rays drawn using line drawing techniques.
 
-Represent polygons using their vertices and implement relevant polygon operations.
+## 5. Screenshots and Generated Graphics
 
-### 4.3 Polygon Clipping and Filling
+The following section displays examples of graphics generated by the project's algorithms. Store the corresponding PNG images in the `screenshots/` directory.
 
-Implement polygon clipping to restrict shapes to a defined viewing region and polygon filling to render their interiors.
+### Solar System Visualization
 
-### 4.4 Circle and Ellipse Representation
+![Solar System visualization](screenshots/solar_system_output.png)
 
-Implement algorithms for generating circles and ellipses to represent circular and elliptical geometric objects.
+*The Solar System scene generated using the project's raster drawing techniques.*
 
-### 4.5 Bézier Curves
+### DDA Line Drawing
 
-Implement Bézier curve generation using control points to produce smooth curves.
+![DDA line drawing output](screenshots/dda_output.png)
 
-### 4.6 Splines
+*Output generated using the Digital Differential Analyzer algorithm.*
 
-Implement spline curves for generating smooth geometric paths and shapes.
+### Polygon Operations
 
-### 4.7 Solar System Visualization
+![Polygon operations output](screenshots/polygon_operations_output.png)
 
-Apply the graphics techniques to relevant Solar System elements, such as celestial body outlines, orbital paths, and scene geometry.
+*Example output from the polygon operations implementation.*
 
-### 4.8 Planned Interactive Features
+### Raster Canvas
 
-The broader application aims to incorporate:
+![Raster canvas test output](screenshots/raster_canvas_test.png)
 
-- A Sun and selected planets.
-- Planetary orbital paths and movement.
-- Rotation of celestial bodies.
-- Camera movement and navigation controls.
-- Scene design, colors, and object sizing.
-- Lighting effects, where supported by the rendering approach.
+*Example raster output produced using the custom RasterCanvas implementation.*
 
-**Implementation status:** The initial C++ program has been compiled and executed successfully. The graphics algorithms and interactive features listed above remain planned until their implementations have been completed and tested.
-
-## 5. Project Structure
-
-The project is organized as follows:
-
-```text
-3D-Solar-Navigator/
-├── src/
-│   └── main.cpp
-├── include/
-├── screenshots/
-├── docs/
-├── build/                 # Generated by CMake; not committed to Git
-├── CMakeLists.txt
-├── README.md
-├── .gitignore
-└── .git/
-```
-
-- `src/`: Contains C++ source files.
-- `include/`: Contains header files and function declarations.
-- `screenshots/`: Stores screenshots of tested algorithms and application output.
-- `docs/`: Stores additional project documentation.
-- `build/`: Contains generated CMake build files and the compiled application.
-- `CMakeLists.txt`: Defines the project build configuration.
-- `README.md`: Contains the project overview and setup instructions.
-- `.gitignore`: Specifies generated and temporary files that Git should ignore.
-- `.git/`: Contains the local Git repository data.
-
-Additional source and header files will be added as the graphics algorithms are implemented.
+> **Note:** These image paths must match the actual screenshot filenames committed to the repository. The images will not appear on GitHub until the files are added to `screenshots/` and pushed.
 
 ## 6. How to Compile and Run
 
-### 6.1 Prerequisites
+### Prerequisites
 
 Install the following tools:
 
-- Git
-- GCC with the MinGW-w64 UCRT64 toolchain
-- CMake 3.20 or later
-- Visual Studio Code (recommended)
+- GCC/G++ with C++17 support.
+- CMake 3.20 or later.
+- Git.
+- Windows PowerShell or a compatible terminal.
 
-On Windows, the GCC toolchain can be installed through MSYS2.
-
-Ensure the GCC directory is available in the Windows PATH:
-
-```text
-C:\msys64\ucrt64\bin
-```
-
-Verify the installations using PowerShell:
+### Step 1: Clone the Repository
 
 ```powershell
-g++ --version
-cmake --version
-git --version
-```
-
-### 6.2 Clone the Repository
-
-Clone the GitHub repository:
-
-```bash
-git clone <your-github-repository-url>
+git clone https://github.com/WTavasi/3D-Solar-Navigator.git
 cd 3D-Solar-Navigator
 ```
 
-Replace `<your-github-repository-url>` with the actual URL of the Project Stellar repository.
-
-### 6.3 Configure the Project
-
-Open a terminal in the project root directory and run:
+### Step 2: Configure the Project
 
 ```powershell
-cmake -S . -B build -G "MinGW Makefiles"
+cmake -S . -B build
 ```
 
-This command configures the project and generates the build files inside the `build/` directory.
-
-The MinGW Makefiles generator is suitable for a Windows environment using the GCC toolchain installed through MSYS2.
-
-### 6.4 Build the Application
-
-Run:
+### Step 3: Compile the Project
 
 ```powershell
 cmake --build build
 ```
 
-CMake will compile the C++ source files listed in `CMakeLists.txt` and generate the application executable.
+This builds the executable targets defined in `CMakeLists.txt`, including the individual algorithm programs and the main `stellar` application.
 
-### 6.5 Run the Application
+### Step 4: Run an Algorithm
 
-On Windows, run:
+On Windows, run the compiled executables from the project root. For example:
+
+```powershell
+.\build\digital_differential_analyzer.exe
+```
+
+To run other algorithm demonstrations, use the corresponding executable:
+
+```powershell
+.\build\bresenham_line_drawing.exe
+.\build\polygon_representation_and_operations.exe
+.\build\polygon_clipping.exe
+.\build\polygon_filling.exe
+.\build\midpoint_circle_drawing.exe
+.\build\midpoint_ellipse_drawing.exe
+.\build\bezier_curve.exe
+.\build\catmull_rom_spline.exe
+```
+
+### Step 5: Run the Main Application
 
 ```powershell
 .\build\stellar.exe
 ```
 
-The current version displays a console message confirming that the C++ program is running.
+The main application is built from `src/main.cpp`. Its current behaviour depends on the implementation in that file.
 
-As the application develops, the executable will incorporate the implemented graphics algorithms and Solar System visualization features.
+### Step 6: Compile and Run the Solar System Graphics Test
 
-### 6.6 Rebuilding After Code Changes
+The Solar System graphics test is located in `tests/solar_system_graphics_test.cpp` and is not currently listed as a CMake executable target.
 
-After modifying the source code, run:
-
-```powershell
-cmake --build build
-```
-
-Then execute the application again:
+Compile it separately:
 
 ```powershell
-.\build\stellar.exe
+g++ -std=c++17 -I include tests/solar_system_graphics_test.cpp -o build/solar_system_graphics_test.exe
 ```
 
-When additional C++ source files or external graphics libraries are introduced, `CMakeLists.txt` will be updated to include the required files and dependencies.
+Run it:
+
+```powershell
+.\build\solar_system_graphics_test.exe
+```
+
+If the program successfully generates `solar_system_output.bmp`, open it with:
+
+```powershell
+start solar_system_output.bmp
+```
+
+Other graphics tests can be compiled similarly using their respective source filenames.
 
 ## 7. Current Project Progress
 
-The project is currently in its initial development stage.
+The project has established the core C++ algorithm implementations and a CMake-based build system.
 
-### Completed
+Completed work includes:
 
-- Set up the C++ development environment.
-- Installed and verified the GCC compiler.
-- Installed and verified CMake.
-- Created the initial project directory structure.
-- Created the initial C++ program.
-- Successfully compiled and executed the program using CMake.
-- Prepared the project documentation and Git ignore rules.
+- Implementation of the required line drawing, polygon, shape, and curve algorithms.
+- Organization of algorithm source files by category.
+- Development of a custom raster canvas for pixel operations and BMP output.
+- Initial integration of raster drawing techniques into a Solar System visualization.
+- Creation of graphics test files for individual algorithms and the Solar System scene.
+- Version control and collaboration through GitHub branches and pull requests.
 
-### In Progress and Planned
-
-- Implementing the required line drawing algorithms and line operations.
-- Implementing polygon representation, clipping, and filling.
-- Implementing circle and ellipse algorithms.
-- Implementing Bézier curves and splines.
-- Testing each algorithm independently.
-- Integrating the algorithms into the Solar System visualization.
-- Developing planetary motion and orbital paths.
-- Adding camera navigation, scene design, and lighting.
-- Capturing screenshots and documenting the results.
-- Maintaining Git history and collaborating through GitHub.
+The project is still being developed. Further integration, testing, and improvements to the overall visualization are planned.
 
 ## 8. Known Limitations and Issues
 
-- The current application is a basic console program and does not yet display a graphical Solar System.
-- The required graphics algorithms have not yet been implemented and verified.
-- Planetary motion and orbital animation are not yet available.
-- Camera navigation and lighting are planned features.
-- A graphics library and rendering approach may need to be selected as development progresses, subject to course requirements.
-- The current CMake configuration builds the initial source file only.
-- Additional source files and library dependencies will require corresponding updates to `CMakeLists.txt`.
-- The build instructions currently target Windows with GCC and MinGW Makefiles. Other operating systems or build environments may require different commands.
+- The current implementation is primarily raster-based and does not yet provide a complete real-time 3D rendering experience.
+- Graphics outputs are generated as image files rather than rendered through a dedicated graphics engine.
+- Some graphics test files may still be incomplete or under development.
+- The individual algorithm programs and graphics test programs are separate executables.
+- The Solar System visualization is an initial demonstration; more complete interaction and navigation features may require further development.
+- Generated BMP files are ignored by Git, so screenshots intended for the README must be saved separately in the `screenshots/` directory and committed.
+- Build instructions may need adjustment if the project structure or CMake targets change.
 
-These limitations will be addressed progressively during development.
+## 9. Repository Structure
 
-## 9. Testing and Evaluation
-
-Each graphics algorithm will be implemented and tested independently before integration into the broader application.
-
-Testing will focus on:
-
-- Correctness of algorithm implementations.
-- Handling of different geometric inputs and boundary cases.
-- Accuracy of generated shapes and curves.
-- Integration between individual graphics components.
-- Successful compilation and execution.
-- Screenshots demonstrating the implemented algorithms.
-
-Testing results and implementation progress will be documented as the project develops.
-
-## 10. Version Control and Collaboration
-
-Git will be used to track changes and maintain the project's development history. GitHub will provide a shared repository for collaboration among team members.
-
-To check repository status:
-
-```bash
-git status
+```text
+3D-Solar-Navigator/
+├── .github/
+│   └── workflows/
+├── docs/
+├── include/
+│   ├── raster/
+│   └── algorithms/
+│       └── shapes/
+├── src/
+│   ├── main.cpp
+│   └── algorithms/
+│       ├── lines/
+│       ├── polygons/
+│       ├── shapes/
+│       └── curves/
+├── tests/
+├── screenshots/
+├── build/
+├── CMakeLists.txt
+├── .gitignore
+└── README.md
 ```
 
-To stage and commit project source files and documentation:
+The `build/` directory contains generated build files and should not be committed. The exact directory structure may evolve as development continues.
 
-```bash
-git add README.md .gitignore CMakeLists.txt src include docs screenshots
-git commit -m "Update Project Stellar documentation and source files"
-```
+## 10. Conclusion
 
-To upload committed changes to GitHub:
-
-```bash
-git push
-```
-
-The GitHub remote must be configured, and the user must have permission to push to the repository.
-
-Generated build files in `build/` are excluded from version control.
-
-## 11. Conclusion
-
-Project Stellar aims to demonstrate fundamental computer graphics concepts through the development of an interactive Solar System visualization. By implementing and testing graphics algorithms, applying them to celestial objects, and progressively integrating rendering and navigation features, the team aims to build a functional and well-documented computer graphics application.
+Project Stellar demonstrates fundamental computer graphics algorithms in C++ and applies them to a raster-based Solar System visualization. The project provides a foundation for understanding how graphical objects, lines, polygons, shapes, and curves can be generated computationally. Future work will focus on improving integration, testing, and interactive visualization.
