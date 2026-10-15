@@ -1,7 +1,6 @@
-
 #include <iostream>
 #include <cmath>
-#include <random>
+#include <vector>
 
 #include "raster_canvas.h"
 #include "midpoint_circle.h"
@@ -54,43 +53,38 @@ void drawSunRays(RasterCanvas& canvas, int cx, int cy) {
     }
 }
 
-// Draw an asteroid belt between Mars and Jupiter.
-void drawAsteroidBelt(
+
+void drawDDALine(
     RasterCanvas& canvas,
-    int cx, int cy,
-    int innerRadiusX, int outerRadiusX,
-    int innerRadiusY, int outerRadiusY
+    int x1, int y1,
+    int x2, int y2,
+    unsigned char r, unsigned char g, unsigned char b
 ) {
-    std::mt19937 generator(42);
+    int dx = x2 - x1;
+    int dy = y2 - y1;
 
-    std::uniform_real_distribution<double> angleDistribution(0.0, 2 * PI);
-    std::uniform_real_distribution<double> distanceDistribution(0.0, 1.0);
-    std::uniform_int_distribution<int> sizeDistribution(1, 2);
-    std::uniform_int_distribution<int> shadeDistribution(110, 200);
+    int steps = std::max(std::abs(dx), std::abs(dy));
 
-    // Draw many small rocks in an elliptical ring.
-    for (int i = 0; i < 260; ++i) {
-        double angle = angleDistribution(generator);
-        double distance = distanceDistribution(generator);
+    if (steps == 0) {
+        canvas.setPixel(x1, y1, r, g, b);
+        return;
+    }
 
-        int rx = innerRadiusX +
-            static_cast<int>(distance * (outerRadiusX - innerRadiusX));
+    double xIncrement = static_cast<double>(dx) / steps;
+    double yIncrement = static_cast<double>(dy) / steps;
 
-        int ry = innerRadiusY +
-            static_cast<int>(distance * (outerRadiusY - innerRadiusY));
+    double x = x1;
+    double y = y1;
 
-        int x = cx + static_cast<int>(rx * std::cos(angle));
-        int y = cy + static_cast<int>(ry * std::sin(angle));
-
-        int size = sizeDistribution(generator);
-        int shade = shadeDistribution(generator);
-
-        drawCircle(
-            canvas, x, y, size,
-            static_cast<unsigned char>(shade),
-            static_cast<unsigned char>(shade - 15),
-            static_cast<unsigned char>(shade - 30)
+    for (int i = 0; i <= steps; ++i) {
+        canvas.setPixel(
+            static_cast<int>(std::round(x)),
+            static_cast<int>(std::round(y)),
+            r, g, b
         );
+
+        x += xIncrement;
+        y += yIncrement;
     }
 }
 
@@ -132,13 +126,6 @@ int main() {
         );
     }
 
-    // Asteroid belt between Mars and Jupiter.
-    drawAsteroidBelt(
-        canvas,
-        sunX, sunY,
-        290, 325,
-        185, 210
-    );
 
     // Draw the Sun.
     drawCircle(canvas, sunX, sunY, 35, 255, 220, 0);
@@ -180,7 +167,6 @@ int main() {
         std::cout << "Solar System image saved successfully!\n";
         std::cout << "File: solar_system_output.bmp\n";
         std::cout << "Planets: 8\n";
-        std::cout << "Asteroid belt: added\n";
         std::cout << "Circle algorithm: Midpoint Circle Drawing\n";
     } else {
         std::cerr << "Failed to save Solar System image.\n";
